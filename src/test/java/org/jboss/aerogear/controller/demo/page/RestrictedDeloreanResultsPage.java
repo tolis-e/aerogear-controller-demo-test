@@ -31,15 +31,43 @@ import org.openqa.selenium.WebElement;
 public class RestrictedDeloreanResultsPage extends ResultsPage {
 
     /**
+     * The heading title for the restricted page.
+     */
+    private final String restrictedPageHeadingTitle = "Restricted page";
+
+    /**
      * Locator for the restricted delorean link.
      */
     @FindBy(jquery = "a[href=\"delorean\"]")
     private WebElement restrictedDeloreanPageLink;
 
     /**
+     * The heading title for the results security error page.
+     */
+    private final String securityErrorPageHeadingTitle = "Security error page";
+
+    /**
+     * Gets the heading title for the security error results page.
+     * 
+     * @return heading title
+     */
+    public String getSecurityErrorPageHeadingTitle() {
+        return securityErrorPageHeadingTitle;
+    }
+
+    /**
      * Navigates to the restricted delorean page.
      */
     public void navigateToRestrictedDeloeanPage() {
         guardHttp(restrictedDeloreanPageLink).click();
+    }
+
+    /**
+     * Gets the page heading title for the restricted page.
+     * 
+     * @return Page heading title.
+     */
+    public String getRestrictedPageHeadingTitle() {
+        return restrictedPageHeadingTitle;
     }
 }

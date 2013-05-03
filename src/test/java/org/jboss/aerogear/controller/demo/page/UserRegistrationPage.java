@@ -46,6 +46,20 @@ public class UserRegistrationPage extends AerogearControllerDemoPage {
     private static final String passwordFieldName = "aeroGearUser.password";
 
     /**
+     * The heading title for the user registration heading title.
+     */
+    private final String userRegistrationPageHeadingTitle = "Register";
+
+    /**
+     * Gets the heading title for the user registration heading title.
+     * 
+     * @return heading title.
+     */
+    public String getUserRegistrationPageHeadingTitle() {
+        return userRegistrationPageHeadingTitle;
+    }
+
+    /**
      * Waits until the user registration page is loaded.
      */
     @Override

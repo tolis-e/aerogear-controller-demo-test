@@ -63,6 +63,20 @@ public class RestrictedAdminPage extends AerogearControllerDemoPage {
     private static final String registeredUserLinkHrefFormat = "a[href=\"show/{0}\"]";
 
     /**
+     * The heading title for the restricted admin page.
+     */
+    private final String restrictedAdminPageHeadingTitle = "Restricted Admin page";
+
+    /**
+     * Gets the page heading title for the Restricted Admin page.
+     * 
+     * @return Page heading title
+     */
+    public String getRestrictedAdminPageHeadingTitle() {
+        return restrictedAdminPageHeadingTitle;
+    }
+
+    /**
      * Waits until the login page is loaded.
      */
     @Override

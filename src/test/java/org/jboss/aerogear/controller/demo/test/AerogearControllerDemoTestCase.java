@@ -34,9 +34,9 @@ import org.junit.Test;
 
 /**
  * The class which contains the test cases for the Aerogear-Controller-Demo.
- *
+ * 
  * @author <a href="mailto:aemmanou@redhat.com">Tolis Emmanouilidis</a>
- *
+ * 
  */
 public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
 
@@ -107,7 +107,8 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the page is loaded
         carRegistrationPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (carRegistrationPageHeadingTitle.equals(carRegistrationPage.getHeadingTitle()));
+        Assert.assertTrue(carRegistrationPage.getCarRegistrationPageHeadingTitle()
+                .equals(carRegistrationPage.getHeadingTitle()));
     }
 
     /**
@@ -123,11 +124,12 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the result page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (unrestrictedPageHeadingTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getUnrestrictedPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
         // assert that the text of the first paragraph is correct
-        Assert.assertTrue (carRegistrationPageBodyMessage.equals(resultsPage.getParagraphText(0)));
+        Assert.assertTrue(carRegistrationPage.getCarRegistrationPageBodyMessage().equals(resultsPage.getParagraphText(0)));
         // assert that the text of the second paragraph is correct
-        Assert.assertTrue (carRegistrationTailMessage.equals(resultsPage.getParagraphText(1)));
+        Assert.assertTrue(MessageFormat.format(carRegistrationPage.getCarRegistrationTailMessageFormat(), carRegistrationColor,
+                carRegistrationBrand).equals(resultsPage.getParagraphText(1)));
     }
 
     /**
@@ -145,9 +147,9 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (generalErrorPageHeadingTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getGeneralErrorPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
         // assert that the paragraph's message is correct
-        Assert.assertTrue (generalErrorPageRuntimeMessage.equals(resultsPage.getParagraphText(0)));
+        Assert.assertTrue(resultsPage.getGeneralErrorPageRuntimeMessage().equals(resultsPage.getParagraphText(0)));
     }
 
     /**
@@ -161,7 +163,7 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the result page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (securityErrorPageHeadingTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getSecurityErrorPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
     }
 
     /**
@@ -175,16 +177,17 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // assert that the 2 div contains a specified message
-        Assert.assertTrue (loginResultPage.getDivText(1) != null && loginResultPage.getDivText(1).contains(
-                MessageFormat.format(loggedInPageTailMessage, userRegistrationUsername_1)));
+        Assert.assertTrue(loginResultPage.getDivText(1) != null
+                && loginResultPage.getDivText(1).contains(
+                        MessageFormat.format(loginResultPage.getLoggedInPageTailMessage(), userRegistrationUsername_1)));
         // logout
         loginResultPage.logoutHttp();
         // wait until the page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedOutPageTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getLoggedOutPageTitle().equals(resultsPage.getHeadingTitle()));
     }
 
     /**
@@ -198,16 +201,17 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // assert that the first div contains a specified message
-        Assert.assertTrue (loginResultPage.getDivText(1) != null && loginResultPage.getDivText(1).contains(
-                MessageFormat.format(loggedInPageTailMessage, defaultUsername)));
+        Assert.assertTrue(loginResultPage.getDivText(1) != null
+                && loginResultPage.getDivText(1).contains(
+                        MessageFormat.format(loginResultPage.getLoggedInPageTailMessage(), defaultUsername)));
         // logout
         loginResultPage.logoutHttp();
         // wait until the page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedOutPageTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getLoggedOutPageTitle().equals(resultsPage.getHeadingTitle()));
     }
 
     /**
@@ -221,25 +225,26 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // assert that the first div contains a specified message
-        Assert.assertTrue (loginResultPage.getDivText(1) != null && loginResultPage.getDivText(1).contains(
-                MessageFormat.format(loggedInPageTailMessage, userRegistrationUsername_1)));
+        Assert.assertTrue(loginResultPage.getDivText(1) != null
+                && loginResultPage.getDivText(1).contains(
+                        MessageFormat.format(loginResultPage.getLoggedInPageTailMessage(), userRegistrationUsername_1)));
         // login
         login(userRegistrationUsername_1, userRegistrationPassword_1);
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is corrrect
-        Assert.assertTrue (securityErrorPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getSecurityErrorPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // assert that the paragraphs text is the specified one
-        Assert.assertTrue (loginResultPage.getParagraphText(0) != null && loginResultPage.getParagraphText(0).contains(
-                alreadyLoggedInMessage));
+        Assert.assertTrue(loginResultPage.getParagraphText(0) != null
+                && loginResultPage.getParagraphText(0).contains(loginResultPage.getAlreadyLoggedInMessage()));
         // logout
         loginResultPage.logoutHttp();
         // wait until the page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedOutPageTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getLoggedOutPageTitle().equals(resultsPage.getHeadingTitle()));
     }
 
     /**
@@ -257,7 +262,8 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the page is loaded
         restrictedDeloreanResultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (securityErrorPageHeadingTitle.equals(restrictedDeloreanResultsPage.getHeadingTitle()));
+        Assert.assertTrue(restrictedDeloreanResultsPage.getSecurityErrorPageHeadingTitle().equals(
+                restrictedDeloreanResultsPage.getHeadingTitle()));
     }
 
     /**
@@ -271,13 +277,14 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // navigate to the restricted delorean page
         loginResultPage.navigateToRestrictedDeloreanPage();
         // wait until the page is loaded
         restrictedDeloreanResultsPage.waitUntilPageIsLoaded();
         // assert that the page heading title is correct
-        Assert.assertTrue (restrictedPageHeadingTitle.equals(restrictedDeloreanResultsPage.getHeadingTitle()));
+        Assert.assertTrue(restrictedDeloreanResultsPage.getRestrictedPageHeadingTitle().equals(
+                restrictedDeloreanResultsPage.getHeadingTitle()));
         // logout
         logout();
     }
@@ -297,7 +304,7 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (securityErrorPageHeadingTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getSecurityErrorPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
     }
 
     /**
@@ -312,16 +319,17 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // navigate to the restricted delorean page
         loginResultPage.navigateToRestrictedAdminPage();
         // wait until page is loaded
         restrictedAdminPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (restrictedAdminPageHeadingTitle.equals(restrictedAdminPage.getHeadingTitle()));
+        Assert.assertTrue(restrictedAdminPage.getRestrictedAdminPageHeadingTitle()
+                .equals(restrictedAdminPage.getHeadingTitle()));
         // assert that a registered user with the default username exists
-        Assert.assertTrue (restrictedAdminPage.getRegisteredUser(defaultUsername) != null && defaultUsername.equals(restrictedAdminPage
-                .getRegisteredUser(defaultUsername).getText()));
+        Assert.assertTrue(restrictedAdminPage.getRegisteredUser(defaultUsername) != null
+                && defaultUsername.equals(restrictedAdminPage.getRegisteredUser(defaultUsername).getText()));
         // logout
         logout();
     }
@@ -337,24 +345,26 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // navigate to the restricted delorean page
         loginResultPage.navigateToRestrictedAdminPage();
         // wait until page is loaded
         restrictedAdminPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (restrictedAdminPageHeadingTitle.equals(restrictedAdminPage.getHeadingTitle()));
+        Assert.assertTrue(restrictedAdminPage.getRestrictedAdminPageHeadingTitle()
+                .equals(restrictedAdminPage.getHeadingTitle()));
         // assert that a registered user with the default username exists
-        Assert.assertTrue (restrictedAdminPage.getRegisteredUser(defaultUsername) != null && defaultUsername.equals(restrictedAdminPage
-                .getRegisteredUser(defaultUsername).getText()));
+        Assert.assertTrue(restrictedAdminPage.getRegisteredUser(defaultUsername) != null
+                && defaultUsername.equals(restrictedAdminPage.getRegisteredUser(defaultUsername).getText()));
         // register a new user
         restrictedAdminPage.registerHttp(userRegistrationUsername_2, userRegistrationPassword_2);
         // wait for the results page to load
         restrictedAdminResultsPage.waitUntilPageIsLoaded();
         // still the page is the restricted admin page
         // assert that a registered user with the new username
-        Assert.assertTrue (restrictedAdminResultsPage.getRegisteredUser(defaultUsername) != null && userRegistrationUsername_2
-                .equals(restrictedAdminResultsPage.getRegisteredUser(userRegistrationUsername_2).getText()));
+        Assert.assertTrue(restrictedAdminResultsPage.getRegisteredUser(defaultUsername) != null
+                && userRegistrationUsername_2.equals(restrictedAdminResultsPage.getRegisteredUser(userRegistrationUsername_2)
+                        .getText()));
         // logout
         logout();
         // try to login with the new user
@@ -362,7 +372,7 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // logout
         logout();
     }
@@ -378,46 +388,50 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // assert that the 2 div contains a specified message
-        Assert.assertTrue (loginResultPage.getDivText(1) != null && loginResultPage.getDivText(1).contains(
-                MessageFormat.format(loggedInPageTailMessage, userRegistrationUsername_3)));
+        Assert.assertTrue(loginResultPage.getDivText(1) != null
+                && loginResultPage.getDivText(1).contains(
+                        MessageFormat.format(loginResultPage.getLoggedInPageTailMessage(), userRegistrationUsername_3)));
         // logout
         loginResultPage.logoutHttp();
         // wait until the page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedOutPageTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getLoggedOutPageTitle().equals(resultsPage.getHeadingTitle()));
         // login as default user
         login(defaultUsername, defaultPassword);
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // navigate to the restricted delorean page
         loginResultPage.navigateToRestrictedAdminPage();
         // wait until page is loaded
         restrictedAdminPage.waitUntilPageIsLoaded();
         // assert that the heading titile is correct
-        Assert.assertTrue (restrictedAdminPageHeadingTitle.equals(restrictedAdminPage.getHeadingTitle()));
+        Assert.assertTrue(restrictedAdminPage.getRestrictedAdminPageHeadingTitle()
+                .equals(restrictedAdminPage.getHeadingTitle()));
         // assert that a registered user with the username exists
-        Assert.assertTrue (restrictedAdminPage.getRegisteredUser(userRegistrationUsername_3) != null && userRegistrationUsername_3
-                .equals(restrictedAdminPage.getRegisteredUser(userRegistrationUsername_3).getText()));
+        Assert.assertTrue(restrictedAdminPage.getRegisteredUser(userRegistrationUsername_3) != null
+                && userRegistrationUsername_3.equals(restrictedAdminPage.getRegisteredUser(userRegistrationUsername_3)
+                        .getText()));
         // select the default user
         restrictedAdminPage.clickRegisteredUserLink(userRegistrationUsername_3);
         // wait until the page is loaded
         restrictedAdminResultsPage.waitUntilPageIsLoaded();
         // assert that the heading titile is correct
-        Assert.assertTrue (restrictedAdminPageHeadingTitle.equals(restrictedAdminResultsPage.getHeadingTitle()));
+        Assert.assertTrue(restrictedAdminResultsPage.getRestrictedAdminPageHeadingTitle().equals(
+                restrictedAdminResultsPage.getHeadingTitle()));
         // delete the selected user
         restrictedAdminResultsPage.deleteUser();
         // wait until the page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading titile is correct
-        Assert.assertTrue (restrictedAdminPageHeadingTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(restrictedAdminResultsPage.getRestrictedAdminPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
         // assert that the message which indicates that the user was removed appears
-        Assert.assertTrue (resultsPage.getParagraphText(1) != null && resultsPage.getParagraphText(1).contains(
-                restrictedAdminPageUserRemovedMsg));
+        Assert.assertTrue(resultsPage.getParagraphText(1) != null
+                && resultsPage.getParagraphText(1).contains(resultsPage.getRestrictedAdminPageUserRemovedMsg()));
         // logout
         logout();
         // try to login as the user who was deleted and verify that the user cannot login
@@ -425,16 +439,17 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the result page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (securityErrorPageHeadingTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getSecurityErrorPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
         // try to login as another user
         login(defaultUsername, defaultPassword);
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // assert that the 2 div contains a specified message
-        Assert.assertTrue (loginResultPage.getDivText(1) != null && loginResultPage.getDivText(1).contains(
-                MessageFormat.format(loggedInPageTailMessage, defaultUsername)));
+        Assert.assertTrue(loginResultPage.getDivText(1) != null
+                && loginResultPage.getDivText(1).contains(
+                        MessageFormat.format(loginResultPage.getLoggedInPageTailMessage(), defaultUsername)));
         // logout
         loginResultPage.logoutHttp();
 
@@ -451,10 +466,11 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // assert that the 2 div contains a specified message
-        Assert.assertTrue (loginResultPage.getDivText(1) != null && loginResultPage.getDivText(1).contains(
-                MessageFormat.format(loggedInPageTailMessage, userRegistrationUsername_4)));
+        Assert.assertTrue(loginResultPage.getDivText(1) != null
+                && loginResultPage.getDivText(1).contains(
+                        MessageFormat.format(loginResultPage.getLoggedInPageTailMessage(), userRegistrationUsername_4)));
         // logout
         loginResultPage.logoutHttp();
         // register user
@@ -462,11 +478,12 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (generalErrorPageHeadingTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getGeneralErrorPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
         // assert that the user exist message appears
         // assert that the heading title is correct
-        Assert.assertTrue (resultsPage.getParagraphText(0) != null && resultsPage.getParagraphText(0).contains(
-                MessageFormat.format(userExistsErrorMsg, userRegistrationUsername_4)));
+        Assert.assertTrue(resultsPage.getParagraphText(0) != null
+                && resultsPage.getParagraphText(0).contains(
+                        MessageFormat.format(resultsPage.getUserExistsErrorMsg(), userRegistrationUsername_4)));
         // logout
         logout();
     }
@@ -483,26 +500,26 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that heading title is correct
-        Assert.assertTrue (loggedInPageHeadingTitle.equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // assert that the 2 div contains a specified message
-        Assert.assertTrue (loginResultPage.getDivText(1).contains(MessageFormat
-                .format(loggedInPageTailMessage, userRegistrationUsername_4)));
+        Assert.assertTrue(loginResultPage.getDivText(1).contains(
+                MessageFormat.format(loginResultPage.getLoggedInPageTailMessage(), userRegistrationUsername_4)));
         // generate Quick Response Code
         loginResultPage.generateQuickResponseCode();
         // assert that one canvas is created
-        Assert.assertTrue (loginResultPage.getQrCodeList().size() == 1);
+        Assert.assertTrue(loginResultPage.getQrCodeList().size() == 1);
         // generate a second Quick Response Code
         loginResultPage.generateQuickResponseCode();
         // assert that one canvas exist
-        Assert.assertTrue (loginResultPage.getQrCodeList().size() == 1);
+        Assert.assertTrue(loginResultPage.getQrCodeList().size() == 1);
         // authenticate otp
         loginResultPage.authenticateOtpHttp(wrongOTP);
         // wait until the results page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is corrrect
-        Assert.assertTrue (generalErrorPageHeadingTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getGeneralErrorPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
         // assert that the paragraphs text is the specified one
-        Assert.assertTrue (generalErrorPageOtpMessage.equals(resultsPage.getParagraphText(0)));
+        Assert.assertTrue(resultsPage.getGeneralErrorPageOtpMessage().equals(resultsPage.getParagraphText(0)));
         // logout
         logout();
     }
@@ -518,7 +535,7 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is corrrect
-        Assert.assertTrue (securityErrorPageHeadingTitle.equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getSecurityErrorPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
     }
 
     /**
@@ -531,7 +548,7 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
 
     /**
      * Performs the login steps.
-     *
+     * 
      * @param username The username.
      * @param password The password.
      */
@@ -545,14 +562,14 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the page is loaded
         loginPage.waitUntilPageIsLoaded();
         // assert that the heading titile is correct
-        Assert.assertTrue (loginPageHeadingTitle.equals(loginPage.getHeadingTitle()));
+        Assert.assertTrue(loginPage.getLoginPageHeadingTitle().equals(loginPage.getHeadingTitle()));
         // login using the credentials of the default user
         loginPage.loginHttp(username, password);
     }
 
     /**
      * Performs the registration steps.
-     *
+     * 
      * @param username The username.
      * @param password The password.
      */
@@ -566,22 +583,18 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the page is loaded
         userRegistrationPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
-        Assert.assertTrue (userRegistrationPageHeadingTitle.equals(userRegistrationPage.getHeadingTitle()));
+        Assert.assertTrue(userRegistrationPage.getUserRegistrationPageHeadingTitle().equals(
+                userRegistrationPage.getHeadingTitle()));
         // register
         userRegistrationPage.registerHttp(username, password);
     }
 
-    /* ------------------------------- Data used to test the Aerogear-Controller-Demo begin ------------------------------- */
+    /* -- Data used to test the Aerogear-Controller-Demo begin -- */
 
     /**
      * The URL path for the logout action.
      */
     private static final String logoutPath = "logout";
-
-    /**
-     * The heading title for the car registration page.
-     */
-    private static final String carRegistrationPageHeadingTitle = "Simple page";
 
     /**
      * The color to be used in car registration.
@@ -594,47 +607,6 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
     private static final String carRegistrationBrand = "myBrand";
 
     /**
-     * The heading title for the unrestricted page.
-     */
-    private static final String unrestrictedPageHeadingTitle = "Unrestricted page";
-
-    /**
-     * The heading title for the restricted page.
-     */
-    private static final String restrictedPageHeadingTitle = "Restricted page";
-
-    /**
-     * The heading title for the restricted admin page.
-     */
-    private static final String restrictedAdminPageHeadingTitle = "Restricted Admin page";
-
-    /**
-     * The body message of the car registration result.
-     */
-    private static final String carRegistrationPageBodyMessage = "hello, you just saved a car with the following characteristics:";
-
-    /**
-     * The heading title of the general error page.
-     */
-    private static final String generalErrorPageHeadingTitle = "General error page";
-
-    /**
-     * The body message of the general error page when a runtime error occurs.
-     */
-    private static final String generalErrorPageRuntimeMessage = "java.lang.RuntimeException: Demo Exception";
-
-    /**
-     * The body message of the general error page when the OTP is worng.
-     */
-    private static final String generalErrorPageOtpMessage = "java.lang.RuntimeException: Invalid OTP";
-
-    /**
-     * The tail message of the car registration result.
-     */
-    private static final String carRegistrationTailMessage = (new StringBuilder()).append("the color is ")
-            .append(carRegistrationColor).append(" and the brand is ").append(carRegistrationBrand).toString();
-
-    /**
      * A wrong username.
      */
     private static final String loginPageWrongUsername = "Wrong_Username";
@@ -643,21 +615,6 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
      * A wrong password.
      */
     private static final String loginPageWrongPassword = "Wrong_Password";
-
-    /**
-     * The heading title for the login page.
-     */
-    private static final String loginPageHeadingTitle = "Login";
-
-    /**
-     * The heading title for the security error page.
-     */
-    private static final String securityErrorPageHeadingTitle = "Security error page";
-
-    /**
-     * The heading title for the user registration heading title.
-     */
-    private static final String userRegistrationPageHeadingTitle = "Register";
 
     /**
      * Username to be used for registration.
@@ -700,11 +657,6 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
     private static final String userRegistrationPassword_4 = "Pass4";
 
     /**
-     * The heading title for the logged in page.
-     */
-    private static final String loggedInPageHeadingTitle = "Logged in";
-
-    /**
      * Username for default existing user.
      */
     private static final String defaultUsername = "john";
@@ -715,35 +667,10 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
     private static final String defaultPassword = "123";
 
     /**
-     * The tail message which appears when a user has performed a successful login.
-     */
-    private static final String loggedInPageTailMessage = "hello {0} to the authentication page!";
-
-    /**
-     * The heading title of the page which appears after log out.
-     */
-    private static final String loggedOutPageTitle = "Logged out!";
-
-    /**
-     * The message which appears when the user tries to login when he is already logged in.
-     */
-    private static final String alreadyLoggedInMessage = "Already logged in";
-
-    /**
      * A random wrong OTP.
      */
     private static final String wrongOTP = "1234";
 
-    /**
-     * The message which appears when a user is removed.
-     */
-    private static final String restrictedAdminPageUserRemovedMsg = "User removed";
-
-    /**
-     * The error message which appears when trying to register using a username which exists.
-     */
-    private static final String userExistsErrorMsg = "already exists with the given identifier [{0}]";
-
-    /* ------------------------------- Data used to test the Aerogear-Controller-Demo end ------------------------------- */
+    /* -- Data used to test the Aerogear-Controller-Demo end -- */
 
 }

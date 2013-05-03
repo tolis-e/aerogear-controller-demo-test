@@ -48,7 +48,21 @@ public class RestrictedAdminResultsPage extends ResultsPage {
      * Format for the href attribute value of the registered user links.
      */
     private static final String registeredUserLinkHrefFormat = "a[href=\"show/{0}\"]";
-    
+
+    /**
+     * The heading title for the restricted admin results page.
+     */
+    private final String restrictedAdminPageHeadingTitle = "Restricted Admin page";
+
+    /**
+     * Gets the page heading title for the Restricted Admin results page.
+     * 
+     * @return Page heading title
+     */
+    public String getRestrictedAdminPageHeadingTitle() {
+        return restrictedAdminPageHeadingTitle;
+    }
+
     /**
      * Deletes the selected user.
      */

@@ -44,6 +44,118 @@ public class ResultsPage extends AerogearControllerDemoPage {
     private List<WebElement> paragraphs;
 
     /**
+     * The heading title for the unrestricted page.
+     */
+    private final String unrestrictedPageHeadingTitle = "Unrestricted page";
+
+    /**
+     * The heading title of the page which appears after log out.
+     */
+    private final String loggedOutPageTitle = "Logged out!";
+
+    /**
+     * The error message which appears when trying to register using a username which exists.
+     */
+    private final String userExistsErrorMsg = "already exists with the given identifier [{0}]";
+
+    /**
+     * The message which appears when a user is removed.
+     */
+    private final String restrictedAdminPageUserRemovedMsg = "User removed";
+
+    /**
+     * The heading title of the results general error page.
+     */
+    private final String generalErrorPageHeadingTitle = "General error page";
+
+    /**
+     * The body message of the results general error page when a runtime error occurs.
+     */
+    private final String generalErrorPageRuntimeMessage = "java.lang.RuntimeException: Demo Exception";
+
+    /**
+     * The body message of the general error page when the OTP is wrong.
+     */
+    private final String generalErrorPageOtpMessage = "java.lang.RuntimeException: Invalid OTP";
+
+    /**
+     * The heading title for the results security error page.
+     */
+    private final String securityErrorPageHeadingTitle = "Security error page";
+
+    /**
+     * Gets the heading title of the results general error page.
+     * 
+     * @return heading title
+     */
+    public String getGeneralErrorPageHeadingTitle() {
+        return generalErrorPageHeadingTitle;
+    }
+
+    /**
+     * Gets the body message of the results general error page when a runtime error occurs.
+     * 
+     * @return body msg
+     */
+    public String getGeneralErrorPageRuntimeMessage() {
+        return generalErrorPageRuntimeMessage;
+    }
+
+    /**
+     * Gets the body message of the results general error page when the OTP is wrong.
+     * 
+     * @return body msg
+     */
+    public String getGeneralErrorPageOtpMessage() {
+        return generalErrorPageOtpMessage;
+    }
+
+    /**
+     * Gets the heading title for the security error results page.
+     * 
+     * @return heading title
+     */
+    public String getSecurityErrorPageHeadingTitle() {
+        return securityErrorPageHeadingTitle;
+    }
+
+    /**
+     * Gets the message which appears when a user is removed.
+     * 
+     * @return msg
+     */
+    public String getRestrictedAdminPageUserRemovedMsg() {
+        return restrictedAdminPageUserRemovedMsg;
+    }
+
+    /**
+     * Gets the error message which appears when trying to register using a username which exists.
+     * 
+     * @return error msg
+     */
+    public String getUserExistsErrorMsg() {
+        return userExistsErrorMsg;
+    }
+
+    /**
+     * Gets the logged out page title.
+     * 
+     * @return page title
+     */
+    public String getLoggedOutPageTitle() {
+        return loggedOutPageTitle;
+    }
+
+    /**
+     * Gets the unrestricted page's heading title.
+     * 
+     * @return Page heading title.
+     */
+    public String getUnrestrictedPageHeadingTitle() {
+        return unrestrictedPageHeadingTitle;
+    }
+
+    /**
      * Retrieves the paragraphs.
      * 
      * @return A {@link List} of {@link WebElement}

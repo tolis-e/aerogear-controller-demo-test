@@ -71,6 +71,62 @@ public class LoginResultPage extends ResultsPage {
     private static final String otpFieldName = "aeroGearUser.otp";
 
     /**
+     * The tail message which appears when a user has performed a successful login.
+     */
+    private final String loggedInPageTailMessage = "hello {0} to the authentication page!";
+
+    /**
+     * The message which appears when the user tries to login when he is already logged in.
+     */
+    private final String alreadyLoggedInMessage = "Already logged in";
+
+    /**
+     * The heading title for the logged in page.
+     */
+    private final String loggedInPageHeadingTitle = "Logged in";
+
+    /**
+     * The heading title for the login results security error page.
+     */
+    private final String securityErrorPageHeadingTitle = "Security error page";
+
+    /**
+     * Gets the heading title for the security error results page.
+     * 
+     * @return heading title
+     */
+    public String getSecurityErrorPageHeadingTitle() {
+        return securityErrorPageHeadingTitle;
+    }
+
+    /**
+     * Gets the heading title for the logged in page.
+     * 
+     * @return heading title
+     */
+    public String getLoggedInPageHeadingTitle() {
+        return loggedInPageHeadingTitle;
+    }
+
+    /**
+     * Gets the logged in page tail message.
+     * 
+     * @return tail msg
+     */
+    public String getLoggedInPageTailMessage() {
+        return loggedInPageTailMessage;
+    }
+
+    /**
+     * Gets the already logged in message.
+     * 
+     * @return already logged in msg
+     */
+    public String getAlreadyLoggedInMessage() {
+        return alreadyLoggedInMessage;
+    }
+
+    /**
      * Locator for the restricted delorean page link.
      */
     @FindBy(jquery = "a[href=\"delorean\"]")

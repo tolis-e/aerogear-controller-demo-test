@@ -46,6 +46,20 @@ public class LoginPage extends AerogearControllerDemoPage {
     private static final String passwordFieldName = "aeroGearUser.password";
 
     /**
+     * The heading title for the login page.
+     */
+    private String loginPageHeadingTitle = "Login";
+
+    /**
+     * Gets the heading title.
+     * 
+     * @return heading title
+     */
+    public String getLoginPageHeadingTitle() {
+        return loginPageHeadingTitle;
+    }
+
+    /**
      * Waits until the login page is loaded.
      */
     @Override

@@ -79,6 +79,39 @@ public class CarRegistrationPage extends AerogearControllerDemoPage {
     private WebElement errorHandlingPageLink;
 
     /**
+     * The heading title for the car registration page.
+     */
+    private final String carRegistrationPageHeadingTitle = "Simple page";
+
+    /**
+     * The body message of the car registration result.
+     */
+    private final String carRegistrationPageBodyMessage = "hello, you just saved a car with the following characteristics:";
+
+    /**
+     * The tail message of the car registration result.
+     */
+    private final String carRegistrationTailMessageFormat = "the color is {0} and the brand is {1}";
+
+    /**
+     * Gets the tail message of the car registration page.
+     * 
+     * @return tail msg
+     */
+    public String getCarRegistrationTailMessageFormat() {
+        return carRegistrationTailMessageFormat;
+    }
+
+    /**
+     * Gets the body msg appeared on the car registration page.
+     * 
+     * @return body message
+     */
+    public String getCarRegistrationPageBodyMessage() {
+        return carRegistrationPageBodyMessage;
+    }
+
+    /**
      * Waits until the car registration page is loaded.
      */
     @Override
@@ -131,5 +164,14 @@ public class CarRegistrationPage extends AerogearControllerDemoPage {
      */
     public void navigateToErrorHandlingPage() {
         guardHttp(errorHandlingPageLink).click();
+    }
+
+    /**
+     * Gets the page heading title of the Car registration page.
+     * 
+     * @return Page heading title.
+     */
+    public String getCarRegistrationPageHeadingTitle() {
+        return carRegistrationPageHeadingTitle;
     }
 }
