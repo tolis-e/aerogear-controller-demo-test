@@ -47,7 +47,7 @@ public class RestrictedAdminResultsPage extends ResultsPage {
     /**
      * Format for the href attribute value of the registered user links.
      */
-    private static final String registeredUserLinkHrefFormat = "a[href=\"show/{0}\"]";
+    private final String registeredUserLinkHrefFormat = "a[href=\"show/{0}\"]";
 
     /**
      * The heading title for the restricted admin results page.

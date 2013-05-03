@@ -68,7 +68,7 @@ public class LoginResultPage extends ResultsPage {
     /**
      * The name attribute's value for the OTP field.
      */
-    private static final String otpFieldName = "aeroGearUser.otp";
+    private final String otpFieldName = "aeroGearUser.otp";
 
     /**
      * The tail message which appears when a user has performed a successful login.

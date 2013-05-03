@@ -50,17 +50,17 @@ public class RestrictedAdminPage extends AerogearControllerDemoPage {
     /**
      * The name attribute's value for the username field.
      */
-    private static final String usernameFieldName = "aeroGearUser.username";
+    private final String usernameFieldName = "aeroGearUser.username";
 
     /**
      * The name attribute's value for the password field.
      */
-    private static final String passwordFieldName = "aeroGearUser.password";
+    private final String passwordFieldName = "aeroGearUser.password";
 
     /**
      * Format for the href attribute value of the registered user links.
      */
-    private static final String registeredUserLinkHrefFormat = "a[href=\"show/{0}\"]";
+    private final String registeredUserLinkHrefFormat = "a[href=\"show/{0}\"]";
 
     /**
      * The heading title for the restricted admin page.

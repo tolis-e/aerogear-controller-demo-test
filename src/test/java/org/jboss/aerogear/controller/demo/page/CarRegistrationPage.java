@@ -41,12 +41,12 @@ public class CarRegistrationPage extends AerogearControllerDemoPage {
     /**
      * The name attribute's value for the color field.
      */
-    private static final String colorFieldName = "car.color";
+    private final String colorFieldName = "car.color";
 
     /**
      * The name attribute's value for the car field.
      */
-    private static final String brandFieldName = "car.brand";
+    private final String brandFieldName = "car.brand";
 
     /**
      * Locator for the restricted delorean page link.
