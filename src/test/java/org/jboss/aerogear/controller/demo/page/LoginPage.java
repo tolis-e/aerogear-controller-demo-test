@@ -48,7 +48,7 @@ public class LoginPage extends AerogearControllerDemoPage {
     /**
      * The heading title for the login page.
      */
-    private final String loginPageHeadingTitle = "Login";
+    private static final String loginPageHeadingTitle = "Login";
 
     /**
      * Gets the heading title.

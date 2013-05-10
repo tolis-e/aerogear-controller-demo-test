@@ -39,7 +39,7 @@ public class FormContainer {
     /**
      * Pattern used to locate an input field by name.
      */
-    private final String inputFieldByNameLocator = "input[name=\"{0}\"]";
+    private static final String inputFieldByNameLocator = "input[name=\"{0}\"]";
 
     /**
      * Locator for the form.

@@ -65,6 +65,7 @@ public abstract class AerogearControllerDemoTest {
         try {
             driver.get(new URL(contextRoot, getPagePath()).toExternalForm());
         } catch (final Exception ignore) {
+            ignore.printStackTrace();
         }
     }
 
@@ -75,6 +76,7 @@ public abstract class AerogearControllerDemoTest {
         try {
             driver.get(new URL(contextRoot, page).toExternalForm());
         } catch (final Exception ignore) {
+            ignore.printStackTrace();
         }
     }
 
