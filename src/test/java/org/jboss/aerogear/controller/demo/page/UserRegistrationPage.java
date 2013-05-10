@@ -38,17 +38,17 @@ public class UserRegistrationPage extends AerogearControllerDemoPage {
     /**
      * The name attribute's value for the username field.
      */
-    private final String usernameFieldName = "aeroGearUser.username";
+    private static final String usernameFieldName = "aeroGearUser.username";
 
     /**
      * The name attribute's value for the password field.
      */
-    private final String passwordFieldName = "aeroGearUser.password";
+    private static final String passwordFieldName = "aeroGearUser.password";
 
     /**
      * The heading title for the user registration heading title.
      */
-    private final String userRegistrationPageHeadingTitle = "Register";
+    private static final String userRegistrationPageHeadingTitle = "Register";
 
     /**
      * Gets the heading title for the user registration heading title.

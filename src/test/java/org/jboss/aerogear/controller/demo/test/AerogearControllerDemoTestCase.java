@@ -34,58 +34,58 @@ import org.junit.Test;
 
 /**
  * The class which contains the test cases for the Aerogear-Controller-Demo.
- *
+ * 
  * @author <a href="mailto:aemmanou@redhat.com">Tolis Emmanouilidis</a>
- *
+ * 
  */
 public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
 
     /**
      * Injects the car registration page inside the test case.
      */
-    @Page
+    private @Page
     CarRegistrationPage carRegistrationPage;
 
     /**
      * Injects the login page inside the test case.
      */
-    @Page
+    private @Page
     LoginPage loginPage;
 
     /**
      * Injects the login result page inside the test case.
      */
-    @Page
+    private @Page
     LoginResultPage loginResultPage;
 
     /**
      * Injects the user registration page inside the test case.
      */
-    @Page
+    private @Page
     UserRegistrationPage userRegistrationPage;
 
     /**
      * Injects the results page inside the test case.
      */
-    @Page
+    private @Page
     ResultsPage resultsPage;
 
     /**
      * Injects the restricted delorean results page inside the test case.
      */
-    @Page
+    private @Page
     RestrictedDeloreanResultsPage restrictedDeloreanResultsPage;
 
     /**
      * Injects the restricted admin page.
      */
-    @Page
+    private @Page
     RestrictedAdminPage restrictedAdminPage;
 
     /**
      * Injects the restricted admin results page.
      */
-    @Page
+    private @Page
     RestrictedAdminResultsPage restrictedAdminResultsPage;
 
     /**
@@ -548,7 +548,7 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
 
     /**
      * Performs the login steps.
-     *
+     * 
      * @param username The username.
      * @param password The password.
      */
@@ -569,7 +569,7 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
 
     /**
      * Performs the registration steps.
-     *
+     * 
      * @param username The username.
      * @param password The password.
      */
@@ -594,82 +594,82 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
     /**
      * The URL path for the logout action.
      */
-    private final String logoutPath = "logout";
+    private static final String logoutPath = "logout";
 
     /**
      * The color to be used in car registration.
      */
-    private final String carRegistrationColor = "myColor";
+    private static final String carRegistrationColor = "myColor";
 
     /**
      * The brand to be used in car registration.
      */
-    private final String carRegistrationBrand = "myBrand";
+    private static final String carRegistrationBrand = "myBrand";
 
     /**
      * A wrong username.
      */
-    private final String loginPageWrongUsername = "Wrong_Username";
+    private static final String loginPageWrongUsername = "Wrong_Username";
 
     /**
      * A wrong password.
      */
-    private final String loginPageWrongPassword = "Wrong_Password";
+    private static final String loginPageWrongPassword = "Wrong_Password";
 
     /**
      * Username to be used for registration.
      */
-    private final String userRegistrationUsername_1 = "User1";
+    private static final String userRegistrationUsername_1 = "User1";
 
     /**
      * Password to be used for registration.
      */
-    private final String userRegistrationPassword_1 = "Pass1";
+    private static final String userRegistrationPassword_1 = "Pass1";
 
     /**
      * Username to be used for registration.
      */
-    private final String userRegistrationUsername_2 = "User2";
+    private static final String userRegistrationUsername_2 = "User2";
 
     /**
      * Password to be used for registration.
      */
-    private final String userRegistrationPassword_2 = "Pass2";
+    private static final String userRegistrationPassword_2 = "Pass2";
 
     /**
      * Username to be used for registration.
      */
-    private final String userRegistrationUsername_3 = "User3";
+    private static final String userRegistrationUsername_3 = "User3";
 
     /**
      * Password to be used for registration.
      */
-    private final String userRegistrationPassword_3 = "Pass3";
+    private static final String userRegistrationPassword_3 = "Pass3";
 
     /**
      * Username to be used for registration.
      */
-    private final String userRegistrationUsername_4 = "User4";
+    private static final String userRegistrationUsername_4 = "User4";
 
     /**
      * Password to be used for registration.
      */
-    private final String userRegistrationPassword_4 = "Pass4";
+    private static final String userRegistrationPassword_4 = "Pass4";
 
     /**
      * Username for default existing user.
      */
-    private final String defaultUsername = "john";
+    private static final String defaultUsername = "john";
 
     /**
      * Password for default existing user.
      */
-    private final String defaultPassword = "123";
+    private static final String defaultPassword = "123";
 
     /**
      * A random wrong OTP.
      */
-    private final String wrongOTP = "1234";
+    private static final String wrongOTP = "1234";
 
     /* -- Data used to test the Aerogear-Controller-Demo end -- */
 

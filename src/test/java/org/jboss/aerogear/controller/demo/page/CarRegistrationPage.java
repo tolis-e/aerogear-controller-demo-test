@@ -41,12 +41,12 @@ public class CarRegistrationPage extends AerogearControllerDemoPage {
     /**
      * The name attribute's value for the color field.
      */
-    private final String colorFieldName = "car.color";
+    private static final String colorFieldName = "car.color";
 
     /**
      * The name attribute's value for the car field.
      */
-    private final String brandFieldName = "car.brand";
+    private static final String brandFieldName = "car.brand";
 
     /**
      * Locator for the restricted delorean page link.
@@ -81,17 +81,17 @@ public class CarRegistrationPage extends AerogearControllerDemoPage {
     /**
      * The heading title for the car registration page.
      */
-    private final String carRegistrationPageHeadingTitle = "Simple page";
+    private static final String carRegistrationPageHeadingTitle = "Simple page";
 
     /**
      * The body message of the car registration result.
      */
-    private final String carRegistrationPageBodyMessage = "hello, you just saved a car with the following characteristics:";
+    private static final String carRegistrationPageBodyMessage = "hello, you just saved a car with the following characteristics:";
 
     /**
      * The tail message of the car registration result.
      */
-    private final String carRegistrationTailMessageFormat = "the color is {0} and the brand is {1}";
+    private static final String carRegistrationTailMessageFormat = "the color is {0} and the brand is {1}";
 
     /**
      * Gets the tail message of the car registration page.

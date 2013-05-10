@@ -33,7 +33,7 @@ public class RestrictedDeloreanResultsPage extends ResultsPage {
     /**
      * The heading title for the restricted page.
      */
-    private final String restrictedPageHeadingTitle = "Restricted page";
+    private static final String restrictedPageHeadingTitle = "Restricted page";
 
     /**
      * Locator for the restricted delorean link.
@@ -44,7 +44,7 @@ public class RestrictedDeloreanResultsPage extends ResultsPage {
     /**
      * The heading title for the results security error page.
      */
-    private final String securityErrorPageHeadingTitle = "Security error page";
+    private static final String securityErrorPageHeadingTitle = "Security error page";
 
     /**
      * Gets the heading title for the security error results page.

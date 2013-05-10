@@ -68,27 +68,27 @@ public class LoginResultPage extends ResultsPage {
     /**
      * The name attribute's value for the OTP field.
      */
-    private final String otpFieldName = "aeroGearUser.otp";
+    private static final String otpFieldName = "aeroGearUser.otp";
 
     /**
      * The tail message which appears when a user has performed a successful login.
      */
-    private final String loggedInPageTailMessage = "hello {0} to the authentication page!";
+    private static final String loggedInPageTailMessage = "hello {0} to the authentication page!";
 
     /**
      * The message which appears when the user tries to login when he is already logged in.
      */
-    private final String alreadyLoggedInMessage = "Already logged in";
+    private static final String alreadyLoggedInMessage = "Already logged in";
 
     /**
      * The heading title for the logged in page.
      */
-    private final String loggedInPageHeadingTitle = "Logged in";
+    private static final String loggedInPageHeadingTitle = "Logged in";
 
     /**
      * The heading title for the login results security error page.
      */
-    private final String securityErrorPageHeadingTitle = "Security error page";
+    private static final String securityErrorPageHeadingTitle = "Security error page";
 
     /**
      * Gets the heading title for the security error results page.

@@ -47,12 +47,12 @@ public class RestrictedAdminResultsPage extends ResultsPage {
     /**
      * Format for the href attribute value of the registered user links.
      */
-    private final String registeredUserLinkHrefFormat = "a[href=\"show/{0}\"]";
+    private static final String registeredUserLinkHrefFormat = "a[href=\"show/{0}\"]";
 
     /**
      * The heading title for the restricted admin results page.
      */
-    private final String restrictedAdminPageHeadingTitle = "Restricted Admin page";
+    private static final String restrictedAdminPageHeadingTitle = "Restricted Admin page";
 
     /**
      * Gets the page heading title for the Restricted Admin results page.
@@ -77,7 +77,7 @@ public class RestrictedAdminResultsPage extends ResultsPage {
      * @return a {@link WebElement}
      */
     public WebElement getRegisteredUser(String username) {
-        return registeredUsersUL != null ? registeredUsersUL.findElement(ByJQuery.jquerySelector(MessageFormat.format(
+        return (registeredUsersUL != null) ? registeredUsersUL.findElement(ByJQuery.jquerySelector(MessageFormat.format(
                 registeredUserLinkHrefFormat, username))) : null;
     }
 }

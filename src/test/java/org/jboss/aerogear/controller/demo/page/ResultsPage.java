@@ -46,42 +46,42 @@ public class ResultsPage extends AerogearControllerDemoPage {
     /**
      * The heading title for the unrestricted page.
      */
-    private final String unrestrictedPageHeadingTitle = "Unrestricted page";
+    private static final String unrestrictedPageHeadingTitle = "Unrestricted page";
 
     /**
      * The heading title of the page which appears after log out.
      */
-    private final String loggedOutPageTitle = "Logged out!";
+    private static final String loggedOutPageTitle = "Logged out!";
 
     /**
      * The error message which appears when trying to register using a username which exists.
      */
-    private final String userExistsErrorMsg = "already exists with the given identifier [{0}]";
+    private static final String userExistsErrorMsg = "already exists with the given identifier [{0}]";
 
     /**
      * The message which appears when a user is removed.
      */
-    private final String restrictedAdminPageUserRemovedMsg = "User removed";
+    private static final String restrictedAdminPageUserRemovedMsg = "User removed";
 
     /**
      * The heading title of the results general error page.
      */
-    private final String generalErrorPageHeadingTitle = "General error page";
+    private static final String generalErrorPageHeadingTitle = "General error page";
 
     /**
      * The body message of the results general error page when a runtime error occurs.
      */
-    private final String generalErrorPageRuntimeMessage = "java.lang.RuntimeException: Demo Exception";
+    private static final String generalErrorPageRuntimeMessage = "java.lang.RuntimeException: Demo Exception";
 
     /**
      * The body message of the general error page when the OTP is wrong.
      */
-    private final String generalErrorPageOtpMessage = "java.lang.RuntimeException: Invalid OTP";
+    private static final String generalErrorPageOtpMessage = "java.lang.RuntimeException: Invalid OTP";
 
     /**
      * The heading title for the results security error page.
      */
-    private final String securityErrorPageHeadingTitle = "Security error page";
+    private static final String securityErrorPageHeadingTitle = "Security error page";
 
     /**
      * Gets the heading title of the results general error page.
@@ -171,7 +171,7 @@ public class ResultsPage extends AerogearControllerDemoPage {
      * @return The {@link WebElement} or null.
      */
     public WebElement getParagraph(int index) {
-        return !CollectionUtils.isEmpty(paragraphs) && paragraphs.size() >= index ? paragraphs.get(index) : null;
+        return (!CollectionUtils.isEmpty(paragraphs) && paragraphs.size() >= index) ? paragraphs.get(index) : null;
     }
 
     /**
@@ -200,7 +200,7 @@ public class ResultsPage extends AerogearControllerDemoPage {
      * @return The {@link WebElement} or null.
      */
     public WebElement getDiv(int index) {
-        return !CollectionUtils.isEmpty(divs) && divs.size() >= index ? divs.get(index) : null;
+        return (!CollectionUtils.isEmpty(divs) && divs.size() >= index) ? divs.get(index) : null;
     }
 
     /**
@@ -220,6 +220,6 @@ public class ResultsPage extends AerogearControllerDemoPage {
      * @return The text of the passed {@link WebElement}.
      */
     public String getText(WebElement w) {
-        return w != null ? w.getText() : null;
+        return (w != null) ? w.getText() : null;
     }
 }

@@ -50,22 +50,22 @@ public class RestrictedAdminPage extends AerogearControllerDemoPage {
     /**
      * The name attribute's value for the username field.
      */
-    private final String usernameFieldName = "aeroGearUser.username";
+    private static final String usernameFieldName = "aeroGearUser.username";
 
     /**
      * The name attribute's value for the password field.
      */
-    private final String passwordFieldName = "aeroGearUser.password";
+    private static final String passwordFieldName = "aeroGearUser.password";
 
     /**
      * Format for the href attribute value of the registered user links.
      */
-    private final String registeredUserLinkHrefFormat = "a[href=\"show/{0}\"]";
+    private static final String registeredUserLinkHrefFormat = "a[href=\"show/{0}\"]";
 
     /**
      * The heading title for the restricted admin page.
      */
-    private final String restrictedAdminPageHeadingTitle = "Restricted Admin page";
+    private static final String restrictedAdminPageHeadingTitle = "Restricted Admin page";
 
     /**
      * Gets the page heading title for the Restricted Admin page.
@@ -103,7 +103,7 @@ public class RestrictedAdminPage extends AerogearControllerDemoPage {
      * @return a {@link WebElement}
      */
     public WebElement getRegisteredUser(String username) {
-        return registeredUsersUL != null ? registeredUsersUL.findElement(ByJQuery.jquerySelector(MessageFormat.format(
+        return (registeredUsersUL != null) ? registeredUsersUL.findElement(ByJQuery.jquerySelector(MessageFormat.format(
                 registeredUserLinkHrefFormat, username))) : null;
     }
 
