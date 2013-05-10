@@ -21,6 +21,9 @@ The [POM](https://github.com/tolis-e/aerogear-controller-demo-test/blob/master/p
 
 By default the arq-jboss-managed (managed container) profile is active. An Arquillian managed container is a remote container whose lifecycle is managed by Arquillian. The specific profile is also configured to download and unpack the JBoss Application Server 7 distribution zip from the Maven Central repository.
 
+## Development approach/methodologies
+The development approach is driven from the desire to decouple the testing algorithmic steps / scenarios from the implementation which is tied to a specific DOM structure. For that reason the Page Objects and Page Fragments patterns are used. The Page Objects pattern is used to encapsulate the tested page's structure into one class which contains all the page's parts together with all methods which you will find useful while testing it. The Page Fragments pattern encapsulates parts of the tested page into reusable pieces across all your tests.
+
 ## Functional Test Execution
 The execution of the functional test is done through maven:
 
