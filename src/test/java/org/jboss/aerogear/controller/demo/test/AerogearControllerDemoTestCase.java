@@ -1,42 +1,38 @@
-/*
+/**
  * JBoss, Home of Professional Open Source
- * Copyright 2013, Red Hat, Inc., and individual contributors
- * by the @authors tag. See the copyright.txt in the distribution for a
- * full listing of individual contributors.
+ * Copyright Red Hat, Inc., and individual contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.jboss.aerogear.controller.demo.test;
 
 import java.text.MessageFormat;
 
-import org.jboss.aerogear.controller.demo.page.CarRegistrationPage;
-import org.jboss.aerogear.controller.demo.page.LoginPage;
-import org.jboss.aerogear.controller.demo.page.LoginResultPage;
-import org.jboss.aerogear.controller.demo.page.RestrictedAdminPage;
-import org.jboss.aerogear.controller.demo.page.RestrictedAdminResultsPage;
-import org.jboss.aerogear.controller.demo.page.RestrictedDeloreanResultsPage;
-import org.jboss.aerogear.controller.demo.page.ResultsPage;
-import org.jboss.aerogear.controller.demo.page.UserRegistrationPage;
+import org.jboss.aerogear.controller.demo.test.page.CarRegistrationPage;
+import org.jboss.aerogear.controller.demo.test.page.LoginPage;
+import org.jboss.aerogear.controller.demo.test.page.LoginResultPage;
+import org.jboss.aerogear.controller.demo.test.page.RestrictedAdminPage;
+import org.jboss.aerogear.controller.demo.test.page.RestrictedAdminResultsPage;
+import org.jboss.aerogear.controller.demo.test.page.RestrictedDeloreanResultsPage;
+import org.jboss.aerogear.controller.demo.test.page.ResultsPage;
+import org.jboss.aerogear.controller.demo.test.page.UserRegistrationPage;
 import org.jboss.arquillian.graphene.spi.annotations.Page;
 import org.jboss.arquillian.junit.InSequence;
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * The class which contains the test cases for the Aerogear-Controller-Demo.
- * 
- * @author <a href="mailto:aemmanou@redhat.com">Tolis Emmanouilidis</a>
- * 
+ * The class which contains the tests for the Aerogear-Controller-Demo.
  */
 public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
 
@@ -235,12 +231,12 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is corrrect
-        Assert.assertTrue(loginResultPage.getSecurityErrorPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
+        Assert.assertTrue(loginResultPage.getGeneralErrorPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
         // assert that the paragraphs text is the specified one
         Assert.assertTrue(loginResultPage.getParagraphText(0) != null
                 && loginResultPage.getParagraphText(0).contains(loginResultPage.getAlreadyLoggedInMessage()));
         // logout
-        loginResultPage.logoutHttp();
+        logout();
         // wait until the page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
@@ -389,10 +385,6 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         loginResultPage.waitUntilPageIsLoaded();
         // assert that the heading title is correct
         Assert.assertTrue(loginResultPage.getLoggedInPageHeadingTitle().equals(loginResultPage.getHeadingTitle()));
-        // assert that the 2 div contains a specified message
-        Assert.assertTrue(loginResultPage.getDivText(1) != null
-                && loginResultPage.getDivText(1).contains(
-                        MessageFormat.format(loginResultPage.getLoggedInPageTailMessage(), userRegistrationUsername_3)));
         // logout
         loginResultPage.logoutHttp();
         // wait until the page is loaded
@@ -480,10 +472,8 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // assert that the heading title is correct
         Assert.assertTrue(resultsPage.getGeneralErrorPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
         // assert that the user exist message appears
-        // assert that the heading title is correct
         Assert.assertTrue(resultsPage.getParagraphText(0) != null
-                && resultsPage.getParagraphText(0).contains(
-                        MessageFormat.format(resultsPage.getUserExistsErrorMsg(), userRegistrationUsername_4)));
+                && resultsPage.getParagraphText(0).contains(resultsPage.getUserExistsErrorMsg()));
         // logout
         logout();
     }
@@ -535,7 +525,7 @@ public class AerogearControllerDemoTestCase extends AerogearControllerDemoTest {
         // wait until the results page is loaded
         resultsPage.waitUntilPageIsLoaded();
         // assert that the heading title is corrrect
-        Assert.assertTrue(resultsPage.getSecurityErrorPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
+        Assert.assertTrue(resultsPage.getGeneralErrorPageHeadingTitle().equals(resultsPage.getHeadingTitle()));
     }
 
     /**
