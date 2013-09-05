@@ -43,7 +43,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.org.jboss.arquillian.graphene>2.0.0.Alpha4</version.org.jboss.arquillian.graphene>
-        <aerogear.security.picketlink.version>1.2.1</aerogear.security.picketlink.version>
         <version.org.jboss.arquillian>1.1.1.Final</version.org.jboss.arquillian>
         <version.selenium>2.33.0</version.selenium>
         <version.org.jboss.as>7.1.1.Final</version.org.jboss.as>
@@ -269,13 +268,6 @@
             <groupId>org.jboss.arquillian.junit</groupId>
             <artifactId>arquillian-junit-container</artifactId>
             <scope>test</scope>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.jboss.aerogear</groupId>
-            <artifactId>aerogear-security-picketlink</artifactId>
-            <version>${aerogear.security.picketlink.version}</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
