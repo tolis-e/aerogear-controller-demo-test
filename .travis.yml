@@ -2,7 +2,7 @@ language: java
 jdk: openjdk7
 install:
   - cd ..
-  - git clone https://github.com/aerogear/aerogear-controller-demo.git
+  - git clone https://github.com/tolis-e/aerogear-controller-demo.git
   - mvn -f aerogear-controller-demo/pom.xml package
   - cd aerogear-controller-demo-test
   - echo "install begin"
